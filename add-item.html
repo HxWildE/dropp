@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Order</title>
+    <link rel="stylesheet" href="add-css.css">
+    <link rel="icon" href="./delivery-truck.png">
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">
+            <img src="2.png" alt="Dropp Logo">
+        </div>
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">CONTACT US</a></li>
+        </ul>
+    </nav>
+</header>
+    <main>
+        <form id="order-form" onsubmit="return showMessage()">
+            <h1>Create an Order</h1>
+            <label for="product-name">Product Name:</label>
+            <input type="text" id="product-name" name="product-name" placeholder="Enter product name" required>
+
+            <label for="tracking-id">Tracking ID:</label>
+            <input type="text" id="tracking-id" name="tracking-id" placeholder="Enter tracking ID" required>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" required>
+
+            <input type="submit" value="Submit Order">
+        </form>
+        <div id="message" class="hidden">Item added!</div>
+    </main>
+
+    <script>
+        function showMessage() {
+            document.getElementById('message').classList.remove('hidden');
+            return false; // Prevent form submission
+        }
+    </script>
+</body>
+</html>
